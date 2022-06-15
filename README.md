@@ -28,6 +28,13 @@ Before running, create a `~/.fup` file with the following in JSON format:
 }
 ```
 
+## Roadmap
+
+- Ability to open local or remote files, based on a register of hashes
+- A storage service for those that don't want to set up an S3 back-end
+- Apps (including mobile) for more general user-friendly interaction
+- Better hashing algorithm to eliminate possible collisions (though extremely unlikely)
+
 ## Disclaimer
 
 This is early-stage development software, and has only been tested on macOS. Use at your own risk.
