@@ -26,6 +26,7 @@ Before running, create a `~/.fup` file with the following in JSON format:
   "AWS_BUCKET": <your aws bucket name>,
   "CUSTOM_DOMAIN": <custom domain for your bucket (optional)>
 }
+```
 
 ## Disclaimer
 
