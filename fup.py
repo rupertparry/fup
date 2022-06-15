@@ -38,7 +38,12 @@ def upload_file(file_path, force=False):
 
     hashname = get_hashname(file_path)
 
-    obj_exists = client.head_object(Bucket=config["AWS_BUCKET"], Key=hashname)
+    try:
+        client.head_object(Bucket=config["AWS_BUCKET"], Key=hashname)
+        obj_exists = True
+    except:
+        obj_exists = False
+    
     if obj_exists and not force:
         file_url = f"{base_url}/{hashname}"
         pyperclip.copy(file_url)
