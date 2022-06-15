@@ -1,7 +1,7 @@
 # FUP – A simple tool for putting files up.
 
 **fup** is a simple command-line tool for sharing links to files. It uses a
-hash of a file's creation date & your username to act as a unique file
+hash of a file's creation date & your email address to act as a unique file
 ID and keep everything in sync.
 
 - ✨ Share a unique URL to a file by running `fup myfile.png`
@@ -19,7 +19,7 @@ Before running, create a `~/.fup` file with the following in JSON format:
 
 ```
 {
-  "ID": <make up a user ID string>,
+  "ID": <your email address>,
   "AWS_KEY": <your aws key>,
   "AWS_SECRET": <your aws secret>,
   "AWS_ENDPOINT": <your aws endpoint as an https:// url>,
