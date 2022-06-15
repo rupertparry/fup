@@ -28,7 +28,7 @@ def get_hashname(file_path):
     hash_name = f"{file_hash}{file_suffix}"
     return hash_name
 
-def upload_file(file_path, force=False):
+def handle_file(file_path, force=False, delete=False):
     session = boto3.Session()
     client = session.client('s3',
         endpoint_url=config["AWS_ENDPOINT"],
@@ -44,19 +44,26 @@ def upload_file(file_path, force=False):
     except:
         obj_exists = False
     
-    if obj_exists and not force:
+    if obj_exists and delete:
+        client.delete_object(Bucket=config["AWS_BUCKET"], Key=hashname)
+        print(f"🗑  Remote file deleted: {hashname}")
+        sys.exit()
+    elif obj_exists and not force:
         file_url = f"{base_url}/{hashname}"
         pyperclip.copy(file_url)
-        print(f"✨ Copied to clipboard!")
+        print(f"✨ File exists. Copied to clipboard!")
         print(f"🔗 {file_url}")
         sys.exit()
+    elif not obj_exists and delete:
+        print("🤷 Nothing to delete: file not uploaded.")
+        sys.exit()
 
-    print(f"Uploading {file_path}...")
+    print(f"🚀 Uploading {file_path}")
     client.upload_file(file_path, config["AWS_BUCKET"], hashname, ExtraArgs={'ACL':'public-read'})
 
     file_url = f"{base_url}/{hashname}"
     pyperclip.copy(file_url)
-    print(f"\n✨ File uploaded & copied to clipboard:\n🔗 {file_url}")
+    print(f"✨ File uploaded & copied to clipboard!\n🔗 {file_url}")
 
 
 def abort():
@@ -78,8 +85,10 @@ for arg in args:
         valid_args = True
         file_path = os.path.abspath(os.path.expanduser(arg))
         if '-f' in args or '--force' in args:
-            upload_file(file_path, force=True)
+            handle_file(file_path, force=True)
+        elif '-d' in args or '--delete' in args:
+            handle_file(file_path, delete=True)
         else:
-            upload_file(file_path)
+            handle_file(file_path)
 
 if not valid_args: abort()
