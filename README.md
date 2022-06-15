@@ -1,13 +1,15 @@
 # FUP – A simple tool for putting files up.
 
 **fup** is a simple command-line tool for sharing links to files. It uses a
-hash of a file's creation date & your email address to act as a unique file
+hash of a file's creation date & your email address to act as a unique, permanent file
 ID and keep everything in sync.
 
 - ✨ Share a unique URL to a file by running `fup myfile.png`
 - 🔗 If the file's already up, `fup myfile.png` copies the link
 - 🔥 Replace the same link with a newer version by running `fup -f myfile.png`
 - 🗑 Delete the remote version of a file with `fup -d myfile.png`
+
+If you change service providers, all your file IDs will stay the same.
 
 ## Setup
 
