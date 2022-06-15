@@ -9,7 +9,7 @@ ID and keep everything in sync.
 - 🔥 Replace the same link with a newer version by running `fup -f myfile.png`
 - 🗑 Delete the remote version of a file with `fup -d myfile.png`
 
-If you change service providers, all your file IDs will stay the same.
+If you change service providers, all your file IDs will stay the same, just with a new base URL.
 
 ## Setup
 
