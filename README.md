@@ -4,8 +4,8 @@
 hash a file's creation date & your username to act as a unique file
 ID and keep everything in sync.
 
-✨ Share a unique URL to a file by running `fup myfile.png`
-🔗 If the file's already up, `fup myfile.png` copies the link
+✨ Share a unique URL to a file by running `fup myfile.png`  
+🔗 If the file's already up, `fup myfile.png` copies the link  
 🗑 Delete the remote version of a file with `fup -d myfile.png`
 
 DISCLAIMER: This is not production software, and has only been tested on macOS.
