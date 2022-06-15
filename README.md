@@ -30,7 +30,7 @@ Before running, create a `~/.fup` file with the following in JSON format:
 
 ## Roadmap
 
-- Ability to open local or remote files, based on a register of hashes
+- Ability to open local or remote files, based on a local register of hashes
 - A storage service for those that don't want to set up an S3 back-end
 - Links that display files (e.g. pretty markdown display for `.md` or `.txt` files)
 - Apps (including mobile) for more general user-friendly interaction
