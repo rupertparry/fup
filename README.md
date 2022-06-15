@@ -1,4 +1,4 @@
-# FUP – A simple command-line tool for putting files up.
+# FUP – A simple tool for putting files up.
 
 ✨ Share a file via a unique URL with one command.
 
