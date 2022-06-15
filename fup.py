@@ -3,11 +3,11 @@
 import os, json, sys, hashlib, pathlib, random
 import boto3, pyperclip
 
-config_path = os.path.expanduser('~/.flup')
+config_path = os.path.expanduser('~/.fup')
 
 if not os.path.exists(config_path):
-    print("Please create a ~/.flup file.")
-    quit()
+    print("Please create a ~/.fup file.")
+    sys.exit()
 
 with open(config_path) as file:
     config = json.loads(file.read())
@@ -49,7 +49,7 @@ def upload_file(file_path, force=False):
         pyperclip.copy(file_url)
         print(f"✨ Copied to clipboard!")
         print(f"🔗 {file_url}")
-        quit()
+        sys.exit()
 
     print(f"Uploading {file_path}...")
     client.upload_file(file_path, config["AWS_BUCKET"], hashname, ExtraArgs={'ACL':'public-read'})
@@ -67,7 +67,7 @@ def abort():
         "Um...... no. Don't know what you're on about."
     ])
     print(fail_message)
-    quit()
+    sys.exit()
 
 if len(sys.argv) < 2: abort()
 
