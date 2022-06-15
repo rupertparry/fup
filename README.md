@@ -8,9 +8,6 @@ ID and keep everything in sync.
 - 🔗 If the file's already up, `fup myfile.png` copies the link
 - 🗑 Delete the remote version of a file with `fup -d myfile.png`
 
-DISCLAIMER: This is not production software, and has only been tested on macOS.
-Use at your own risk.
-
 ## Setup
 
 You'll need an AWS S3-compatible object storage bucket. I recommend using
@@ -29,3 +26,7 @@ Before running, create a `~/.fup` file with the following in JSON format:
   "AWS_BUCKET": <your aws bucket name>,
   "CUSTOM_DOMAIN": <custom domain for your bucket (optional)>
 }
+
+## Disclaimer
+
+This is early-stage development software, and has only been tested on macOS. Use at your own risk.
