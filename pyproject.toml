@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "fup"
+version = "0.1.0"
+description = "A simple command-line tool for putting files up."
+authors = ["Rupert Parry <rp@rupert.cloud>"]
+
+[tool.poetry.scripts]
+fup = "fup.fup:run"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+boto3 = "1.23.10"
+pyperclip = "1.8.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

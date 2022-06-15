@@ -76,19 +76,20 @@ def abort():
     print(fail_message)
     sys.exit()
 
-if len(sys.argv) < 2: abort()
+def run():
+    if len(sys.argv) < 2: abort()
 
-valid_args = False
-args = sys.argv[1:]
-for arg in args:
-    if os.path.isfile(arg):
-        valid_args = True
-        file_path = os.path.abspath(os.path.expanduser(arg))
-        if '-f' in args or '--force' in args:
-            handle_file(file_path, force=True)
-        elif '-d' in args or '--delete' in args:
-            handle_file(file_path, delete=True)
-        else:
-            handle_file(file_path)
+    valid_args = False
+    args = sys.argv[1:]
+    for arg in args:
+        if os.path.isfile(arg):
+            valid_args = True
+            file_path = os.path.abspath(os.path.expanduser(arg))
+            if '-f' in args or '--force' in args:
+                handle_file(file_path, force=True)
+            elif '-d' in args or '--delete' in args:
+                handle_file(file_path, delete=True)
+            else:
+                handle_file(file_path)
 
-if not valid_args: abort()
+    if not valid_args: abort()
