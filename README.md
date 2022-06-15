@@ -18,7 +18,7 @@ Digital Ocean Spaces for ease of use.
 
 Build and install with `./build.sh`.
 
-Before running, create a `~/.fup` file with the following:
+Before running, create a `~/.fup` file with the following in JSON format:
 
 ```
 {
