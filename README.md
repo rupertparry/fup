@@ -6,6 +6,7 @@ ID and keep everything in sync.
 
 - ✨ Share a unique URL to a file by running `fup myfile.png`
 - 🔗 If the file's already up, `fup myfile.png` copies the link
+- 🆕 Replace the same link with a newer version by running `fup -f myfile.png`
 - 🗑 Delete the remote version of a file with `fup -d myfile.png`
 
 ## Setup
